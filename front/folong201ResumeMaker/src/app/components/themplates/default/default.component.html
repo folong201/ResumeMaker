@@ -1,0 +1,146 @@
+<div id="doc2" class="yui-t7">
+  <img [src]="imgURL" alt="">
+  <div id="inner">
+
+    <div id="hd">
+      <div class="yui-gc">
+        <div class="yui-u first">
+          <h1>{{ name }}</h1>
+          <h2>{{ proffession }}</h2>
+        </div>
+
+        <div class="yui-u">
+          <div class="contact-info">
+            <h3><a id="pdf" href="#">Download PDF</a></h3>
+            <h3><a href="mailto:{{ email }}">{{ email }}</a></h3>
+            <h3>{{ phone }}</h3>
+          </div><!--// .contact-info -->
+        </div>
+      </div><!--// .yui-gc -->
+    </div><!--// hd -->
+
+    <div id="bd">
+      <div id="yui-main">
+        <div class="yui-b">
+
+          <div class="yui-gf">
+            <div class="yui-u first">
+              <h2>Profile</h2>
+            </div>
+            <div class="yui-u">
+              <p class="enlarge">
+                {{ about }}
+              </p>
+            </div>
+          </div><!--// .yui-gf -->
+
+          <div class="yui-gf">
+            <div class="skill">
+
+              <div class="yui-u first">
+                <h2>Skills</h2>
+              </div>
+              <div class="skill" *ngFor="let skill of skills; let i=index">
+                <div class="talent">
+                  <h2>{{ skill.title }}</h2>
+                  <p>
+                    {{ skill.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="yui-gf  container" *ngIf="technical.length!=0">
+            <div class="yui-u first">
+              <h2>Technical</h2>
+            </div>
+            <div class="yui-u row ">
+              <div class="col-4" *ngFor="let tec of technical;let i=index">{{ tec.name }}</div>
+              <!-- <li class="col col">CSS</li>
+                  <li class="col col" class="last">Javascript</li>
+
+                  <li class="col col">Jquery</li>
+                  <li class="col col">PHP</li>
+                  <li class="last">CVS / Subversion</li>
+                  <li class="col col">OS X</li>
+                  <li class="col col">Windows XP/Vista</li>
+                  <li class="last">Linux</li> -->
+              <!-- <ul class="talent ">
+                </ul> -->
+            </div>
+          </div><!--// .yui-gf-->
+
+          <div class="yui-gf" *ngIf="experiennce.length!=0">
+
+            <div class="yui-u first">
+              <h2>Experience</h2>
+            </div><!--// .yui-u -->
+
+            <div class="yui-u">
+
+              <div class="job" *ngFor="let exp of experiennce">
+                <h2>{{ exp.name }}</h2>
+                <h3>{{ exp.post }}</h3>
+                <h4>{{ exp.date }}</h4>
+                <p>
+                  {{ exp.description }}
+                </p>
+              </div>
+
+              <!-- <div class="job">
+                  <h2>Apple Inc.</h2>
+                  <h3>Senior Interface Designer</h3>
+                  <h4>2005-2007</h4>
+                  <p>Progressively reconceptualize multifunctional "outside the box" thinking through inexpensive
+                    methods of empowerment. Compellingly morph extensive niche markets with mission-critical ideas.
+                    Phosfluorescently deliver bricks-and-clicks strategic theme areas rather than scalable benefits.
+                  </p>
+                </div>
+
+                <div class="job">
+                  <h2>Microsoft</h2>
+                  <h3>Principal and Creative Lead</h3>
+                  <h4>2004-2005</h4>
+                  <p>Intrinsicly transform flexible manufactured products without excellent intellectual capital.
+                    Energistically evisculate orthogonal architectures through covalent action items. Assertively
+                    incentivize sticky platforms without synergistic materials. </p>
+                </div>
+
+
+                <div class="job last">
+                  <h2>International Business Machines (IBM)</h2>
+                  <h3>Lead Web Designer</h3>
+                  <h4>2001-2004</h4>
+                  <p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow
+                    long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent
+                    e-tailers with timely e-markets.</p>
+                </div> -->
+
+            </div><!--// .yui-u -->
+          </div><!--// .yui-gf -->
+
+
+          <div class="yui-gf last">
+            <div class="yui-u first">
+              <h2>Education</h2>
+            </div>
+            <div class="yui-u">
+              <h2>Indiana University - Bloomington, Indiana</h2>
+              <h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
+            </div>
+          </div><!--// .yui-gf -->
+
+
+        </div><!--// .yui-b -->
+      </div><!--// yui-main -->
+    </div><!--// bd -->
+
+    <div id="ft">
+      <p>{{ name }}&mdash; <a href="mailto:{{ email }}">{{ email }}</a> &mdash; {{ phone }}
+      </p>
+    </div><!--// footer -->
+
+  </div><!-- // inner -->
+
+
+</div><!--// doc -->
