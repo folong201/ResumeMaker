@@ -11,7 +11,16 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    public function resumes(){
+        return $this->hasMany(Resume::class);
+    }
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
+    
     /**
      * The attributes that are mass assignable.
      *

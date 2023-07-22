@@ -11,8 +11,8 @@
 
         <div class="yui-u">
           <div class="contact-info">
-            <h3><a id="pdf" href="#">Download PDF</a></h3>
-            <h3><a href="mailto:{{ email }}">{{ email }}</a></h3>
+            <h3><a id="pdf" routerLink="#">Download PDF</a></h3>
+            <h3><a routerLink="mailto:{{ email }}">{{ email }}</a></h3>
             <h3>{{ phone }}</h3>
           </div><!--// .contact-info -->
         </div>
@@ -136,7 +136,7 @@
     </div><!--// bd -->
 
     <div id="ft">
-      <p>{{ name }}&mdash; <a href="mailto:{{ email }}">{{ email }}</a> &mdash; {{ phone }}
+      <p>{{ name }}&mdash; <a routerLink="mailto:{{ email }}">{{ email }}</a> &mdash; {{ phone }}
       </p>
     </div><!--// footer -->
 
