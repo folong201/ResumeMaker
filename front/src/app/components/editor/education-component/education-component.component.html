@@ -1,0 +1,51 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Education
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>The Education Box</p>
+  <mat-expansion-panel hideToggle class="width-100">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Education1
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="row">
+      <div class="col col-12">
+        col of 12
+      </div>
+      <div class="col col-5">col2</div>
+      <div class="col col-5">col-5</div>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Edcation 1
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        This is the expansion title
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+</mat-expansion-panel>
