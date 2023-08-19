@@ -1,0 +1,65 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Languages
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>The Language Box
+    <button mat-raised-button color="primary" (click)="create()">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </p>
+  <mat-expansion-panel hideToggle class="width-100" *ngFor="let item of list; let i=index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Lang {{ i }}
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+        <button mat-raised-button color="warn" (click)="delete(i)">
+          <mat-icon>delete</mat-icon>
+          Delete
+        </button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="row">
+      <div class="col col-12">
+        <div class="ligne2">
+          <div class="mg-5">
+            <div class="col col-12 "> Language name </div>
+            <input class="col-12 last longinput">
+          </div>
+        </div>
+      </div>
+      <div class="flexer">
+        <div class="container">
+          <mat-card class="example-card">
+            <mat-card-content>
+              <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                <label class="example-margin">Progress:</label>
+              </section>
+              <mat-slider class="example-margin" style="width: 100%;">
+                <input type="range" [(ngModel)]="value" matSliderThumb>
+              </mat-slider>
+              <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+                [bufferValue]="bufferValue">
+              </mat-progress-bar>
+              <section class="example-section" *ngIf="mode === 'buffer'">
+                <label class="example-margin">Buffer:</label>
+                <mat-slider class="example-margin">
+                  <input type="range" [(ngModel)]="bufferValue" matSliderThumb>
+                </mat-slider>
+              </section>
+            </mat-card-content>
+          </mat-card>
+
+
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-expansion-panel>

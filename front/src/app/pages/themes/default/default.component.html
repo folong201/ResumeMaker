@@ -1,1 +1,28 @@
+<div class="container" id="containerprincipale">
+  <div class="horizontal">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam harum aspernatur earum temporibus repellendus. Labore iusto natus, dolorum repellendus nisi eos dolore suscipit fugiat, consequuntur temporibus porro soluta eaque fugit.
+  </div>
+</div>
 <p>default works!</p>
+<div>
+  <h1>
+    Name :{{ name |   async }} ok
+  </h1>
+
+</div>
+<div class="btn btn-primary" (click)="addskill()">Add skill</div>
+<ul *ngIf="(skills|async)!.length!=0">
+  Nbr {{ (skills |async )!.length  }}
+<li *ngFor="let skill of (skills|async)">
+  {{ skill }} <div class="btn btn-danger" (click)="removeSkill(skill)">Remove</div>
+</li>
+
+  <style>
+    #containerprincipale{
+
+      background-color:red;
+      /* background:red; */
+      height: 100%;
+    }
+  </style>
+</ul>

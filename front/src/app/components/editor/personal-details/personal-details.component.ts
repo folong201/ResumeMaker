@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { Store } from '@ngxs/store';
+import { SetPersonnalDetails } from 'src/app/resume.actions';
 
 
 @Component({
@@ -8,10 +10,32 @@ import { NgIf } from '@angular/common';
   templateUrl: './personal-details.component.html',
   styleUrls: ['./personal-details.component.css']
 })
-export class PersonalDetailsComponent {
+export class PersonalDetailsComponent implements OnInit{
+  constructor(private store:Store){
+    this.formController.valueChanges.subscribe(()=>{
+      this.store.dispatch(new SetPersonnalDetails(this.formController.value))
+    })
+  }
+  ngOnInit(): void {
+    // this.updateState()
+  }
   imagePreview!: string;
   @ViewChild('fileInput') fileInput: any;
   @Input() panelOpenState: any
+  formController = new FormGroup(
+{
+name : new FormControl(''),
+familyName : new FormControl(''),
+phone : new FormControl(''),
+email : new FormControl(''),
+post : new FormControl(''),
+adresse : new FormControl(''),
+codepostal : new FormControl(''),
+photo : new FormControl(''),
+ville : new FormControl('')
+}
+  )
+
 
   handleDrop(event: DragEvent) {
     event.preventDefault();
@@ -60,14 +84,14 @@ export class PersonalDetailsComponent {
   }
 
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  // email = new FormControl('', [Validators.required, Validators.email]);
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+  // getErrorMessage() {
+  //   if (this.email.hasError('required')) {
+  //     return 'You must enter a value';
+  //   }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  //   return this.email.hasError('email') ? 'Not a valid email' : '';
+  // }
 
 }

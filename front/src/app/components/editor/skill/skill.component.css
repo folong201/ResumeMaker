@@ -23,14 +23,12 @@
   background: #E8E8E8;
   border-style: none;
 }
-.flexer{
+
+.flexer {
   display: flex;
   justify-content: space-between;
 }
 
-.description{
+.description {
   height: 300px;
-}
-.mg-5{
-  margin-right: 5px;
 }
