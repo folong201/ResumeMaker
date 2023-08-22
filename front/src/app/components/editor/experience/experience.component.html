@@ -1,0 +1,18 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Experiene
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>The Experience Box <button mat-raised-button color="primary" (click)="create()">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </p>
+  <div *ngFor="let item of( list|async); let i=index; trackBy: trackByFn">
+    <app-experience-item [index]="i"></app-experience-item>
+  </div>
+</mat-expansion-panel>

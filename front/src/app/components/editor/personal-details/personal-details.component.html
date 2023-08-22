@@ -1,0 +1,114 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" panelOpenState="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Personal data
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <form [formGroup]="formController">
+    <div class="container">
+
+
+      <p><strong>Photo</strong></p>
+      <div class="row">
+
+        <div id="drop-zone" (drop)="handleDrop($event)" (dragover)="handleDragOver($event)" (click)="fileInput.click()"
+          class="imager col col-4">
+          <p *ngIf="!imagePreview">Déposez votre image ici ou cliquez pour choisir un fichier</p>
+          <img id="preview-image" [src]="imagePreview" [style.display]="imagePreview ? 'block' : 'none'">
+          <input type="file" #fileInput (change)="handleFileInput($event)" style="display: none;">
+        </div>
+
+        <div class="namee col-8">
+          <div class="ligne1">
+
+            <div class="mg-5">
+              <div class="col col-8 "> Name </div>
+              <input class="col-12 last" formControlName="name">
+            </div>
+            <div class="mg-5">
+              <div class="col col-8 "> Familly name </div>
+              <input class="col-12 last" formControlName="familyName">
+            </div>
+          </div>
+          <div class="ligne2">
+            <div class="mg-5">
+              <div class="col col-12 "> Email Adress </div>
+              <input class="col-12 last last-email" formControlName="email">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mg-5 col-11">
+          <div class=" "> Post Occupated </div>
+          <input class="col-12 longinput" formControlName="post">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mg-5 col-11">
+          <div class=" "> phone </div>
+          <input class="col-12 longinput" formControlName="phone">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mg-5 col-11">
+          <div class=" "> Adress </div>
+          <input class="col-12 longinput" formControlName="adresse">
+        </div>
+      </div>
+      <div class="row">
+        <div class="ligne1 ligne11">
+
+          <div class="mg-5">
+            <div class="col col-8 "> Post Code </div>
+            <input class="col-12 last" formControlName="codepostal">
+          </div>
+          <div class="mg-5">
+            <div class="col col-8 "> Town </div>
+            <input class="col-12 last" formControlName="ville">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!--
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        This is the expansion title
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        This is the expansion title
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel> -->
+
+</mat-expansion-panel>

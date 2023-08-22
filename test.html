@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropZone</title>
+</head>
+<body>
+    <style>
+        #drop-zone{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+        }
+        #preview-image{
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+<div id="drop-zone" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+    <p id="para">Déposez votre image ici</p>
+    <img id="preview-image" style="display: none;">
+</div>
+
+<script>
+    function handleDrop(event) {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const imageUrl = event.target.result;
+            const previewImage = document.getElementById('preview-image');
+            previewImage.src = imageUrl;
+            previewImage.style.display = 'block';
+            console.log(file);
+        };
+        reader.readAsDataURL(file);
+        document.getElementById('para').remove()
+    }
+
+    function handleDragOver(event) {
+        event.preventDefault();
+    }
+</script>
+
+
+</body>
+</html>

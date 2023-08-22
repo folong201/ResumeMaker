@@ -1,0 +1,46 @@
+<!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Languages
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>The Language Box
+    <button mat-raised-button color="primary" (click)="create()">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </p>
+  <ng-container *ngFor="let item of list; let i=index">
+    <app-language-item [index]="i"></app-language-item>
+  </ng-container>
+
+
+</mat-expansion-panel> -->
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Languages
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>The language Box
+    <button mat-raised-button color="primary" (click)="create()">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </p>
+  <!-- <div *ngFor="let item of (list|async); let i = index; trackBy: trackByFn">
+<app-skill-item [index]="i"></app-skill-item>
+  </div> -->
+  <div *ngFor="let item of (list | async);let i=index; trackBy: trackByFn">
+    <ng-container *ngIf="item"> <!-- Vérifier que item est défini -->
+      <app-language-item [index]="i" />
+    </ng-container>
+  </div>
+
+</mat-expansion-panel>

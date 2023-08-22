@@ -1,0 +1,31 @@
+<mat-expansion-panel hideToggle class="width-100">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Skills {{ index }}
+    </mat-panel-title>
+    <mat-panel-description>
+      <button mat-raised-button color="warn" (click)="delete()">
+        <mat-icon>delete</mat-icon>
+        Delete
+      </button>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="row">
+    <form [formGroup]="formcontroller">
+      <div class="col col-12">
+        <div class="ligne2">
+          <div class="mg-5">
+            <div class="col col-12 "> skill name </div>
+            <input class="col-12 last longinput" type="text" formControlName="name">
+          </div>
+        </div>
+      </div>
+      <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+        <label class="example-margin">Level:</label>
+      </section>
+      <mat-slider class="example-margin" style="width: 100%;">
+        <input type="range" formControlName="level" matSliderThumb>
+      </mat-slider>
+    </form>
+  </div>
+</mat-expansion-panel>

@@ -1,0 +1,36 @@
+.last:focus,
+.last:active {
+  border: 2px solid gray;
+  outline: none;
+}
+
+.longinput {
+  width: 565px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  opacity: 0.699999988079071;
+  background: #E8E8E8;
+  border-style: none;
+}
+
+.shotinput {
+  width: 275px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  opacity: 0.699999988079071;
+  background: #E8E8E8;
+  border-style: none;
+}
+.flexer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.description{
+  height: 300px;
+}
+.mg-5{
+  margin-right: 5px;
+}

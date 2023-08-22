@@ -1,0 +1,73 @@
+
+  <mat-expansion-panel hideToggle class="width-100">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Education
+      </mat-panel-title>
+      <mat-panel-description>
+        <span class="mg-5">name{{formgroupList.value.name}}</span>
+        <button mat-raised-button color="warn" (click)="delete()">
+          <mat-icon>delete</mat-icon>
+          Delete {{index}}
+        </button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <form [formGroup]="formgroupList">
+    <div class="row">
+      <div class="col col-12">
+        <div class="ligne2">
+          <div class="mg-5">
+            <div class="col col-12 "> Name </div>
+            <input class="col-12 last longinput" formControlName="name">
+          </div>
+        </div>
+      </div>
+      <div class="flexer">
+
+        <div class="col col-6">
+          <div class="ligne2">
+            <div class="mg-5">
+              <div class="col col-12 ">school </div>
+              <input class="col-12 last shotinput" formControlName="school">
+            </div>
+          </div>
+        </div>
+        <div class="col col-6">
+          <div class="ligne2">
+            <div class="mg-5">
+              <div class="col col-12 "> Town </div>
+              <input class="col-12 last shotinput" formControlName="town">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flexer">
+
+        <div class="col col-6">
+          <div class="ligne2">
+            <div class="mg-5">
+              <div class="col col-12 "> Begin </div>
+              <input class="col-12 last shotinput" type="date" formControlName="begin">
+            </div>
+          </div>
+        </div>
+        <div class="col col-6">
+          <div class="ligne2">
+            <div class="mg-5">
+              <div class="col col-12 "> End </div>
+              <input class="col-12 last shotinput" type="date" formControlName="end">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12">
+        <div class="ligne2">
+          <div class="mg-5">
+            <div class="col col-12 "> Description</div>
+            <textarea name="" id="" cols="30" rows="10" class="col-12 last longinput description" formControlName="description"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </mat-expansion-panel>

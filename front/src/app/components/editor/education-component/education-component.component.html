@@ -1,0 +1,25 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Education
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? 'opened' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>The Education Box
+    <button mat-raised-button color="primary" (click)="create()">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </p>
+  <!-- <mat-icon icon="trash">delete</mat-icon> -->
+
+  <!-- <div class="boite" *ngFor="let item   of (list|async); let i=index">
+    <app-education-item [index]=i></app-education-item>
+  </div> -->
+  <div class="boite" *ngFor="let item of (list | async); let i = index; trackBy: trackByFn">
+    <app-education-item [index]=i></app-education-item>
+  </div>
+
+</mat-expansion-panel>
