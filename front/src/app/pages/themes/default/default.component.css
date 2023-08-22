@@ -1,5 +1,88 @@
-*{
-  color: green;
-  font-size: 35px;
-  font-weight: 600;
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 08px;
+  background-color: #303846;
+  color: white;
+}
+
+.name {
+  padding: 12px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.post {
+  padding: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: auto;
+  height: 23px;
+  flex-shrink: 0;
+}
+
+.header>.row {
+  padding: 16px;
+}
+
+.header>.row>.col-4 {
+  padding-bottom: 15px;
+  height: 13px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.educationtitle{
+  font-size: 30px;
+  font-weight: 300;
+  padding: 15px;
+}
+.name-date{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.education-name{
+  font-weight: 500;
+  font-size: 22px;
+}
+.ecole-ville{
+  padding-left: 15px;
+}
+.education-description{
+  padding: 15px;
+}
+.boxtitle{
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+.skillBox{
+  padding: 15px;
+}
+.box-item{
+  margin: 5px;
+}
+.hobie-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.hobbie-name{
+  display: block;
+  margin: 1px;
+  /* background-color: blue; */
+  /* color: white; */
+  box-shadow: 4px 4px grey;
+  border-radius: 13px;
+  padding: 6px;
 }

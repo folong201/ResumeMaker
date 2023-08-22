@@ -7,29 +7,35 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { NgFor, AsyncPipe } from '@angular/common';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { Store } from '@ngxs/store';
+import { CreateHobbie, DeleteHobbie } from 'src/app/resume.actions';
 
 @Component({
   selector: 'app-hobies',
   templateUrl: './hobies.component.html',
-  styleUrls: ['./hobies.component.css']
+  styleUrls: ['./hobies.component.css'],
 })
 export class HobiesComponent {
+  // constructor(private store: Store) {
+
+  // }
   panelOpenState = true
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl('');
   filteredFruits: Observable<string[]>;
-  fruits: string[] = ['Lemon'];
+  fruits: string[] = [];
   allFruits: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
 
-  @ViewChild('fruitInput') fruitInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('fruitInput') fruitInput!: ElementRef<HTMLInputElement>
 
   announcer = inject(LiveAnnouncer);
 
-  constructor() {
+  constructor(private store: Store) {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
       map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
-    );
+    )
+
   }
 
   add(event: MatChipInputEvent): void {
@@ -38,6 +44,7 @@ export class HobiesComponent {
     // Add our fruit
     if (value) {
       this.fruits.push(value);
+      this.store.dispatch(new CreateHobbie(value))
     }
 
     // Clear the input value
@@ -51,13 +58,15 @@ export class HobiesComponent {
 
     if (index >= 0) {
       this.fruits.splice(index, 1);
-
+      this.store.dispatch(new DeleteHobbie(this.fruits,index))
       this.announcer.announce(`Removed ${fruit}`);
     }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
     this.fruits.push(event.option.viewValue);
+    this.store.dispatch(new CreateHobbie(event.option.viewValue))
+
     this.fruitInput.nativeElement.value = '';
     this.fruitCtrl.setValue(null);
   }

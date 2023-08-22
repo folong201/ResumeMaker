@@ -1,4 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import { ResumeState } from 'src/app/Resume.state';
+import { CreateExperience } from 'src/app/resume.actions';
 
 @Component({
   selector: 'app-experience',
@@ -6,14 +10,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent {
-  list = [1, 3, 5, 6]
+  constructor(private store:Store){}
+  @Select(ResumeState.getExperience)
+  list!:Observable<any>
   delete(index: number) {
-    this.list.splice(index, 1);
+
   }
 
   create() {
-    this.list.push(2)
+    this.store.dispatch(new CreateExperience({}))
   }
   panelOpenState = true
+  trackByFn(index: number, item: any): number {
+    return item.id;
+  }
 
 }

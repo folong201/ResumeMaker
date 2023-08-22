@@ -1,7 +1,11 @@
+import { CreateLanguage } from './../../../resume.actions';
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { NgIf } from '@angular/common';
 import { ProgressBarMode } from '@angular/material/progress-bar';
+import { Select, Store } from '@ngxs/store';
+import { ResumeState } from 'src/app/Resume.state';
 
 @Component({
   selector: 'app-languages',
@@ -9,13 +13,17 @@ import { ProgressBarMode } from '@angular/material/progress-bar';
   styleUrls: ['./languages.component.css']
 })
 export class LanguagesComponent {
-  list = [1, 3, 5, 6]
-  delete(index: number) {
-    this.list.splice(index, 1);
+  @Select(ResumeState.getLangues)
+  list!:Observable<any>
+  constructor(private store:Store){
+
   }
 
   create() {
-    this.list.push(2)
+    this.store.dispatch(new CreateLanguage({name:'',level:''}))
+  }
+  trackByFn(index: number, item: any): number {
+    return item.id;
   }
   panelOpenState = true
   color: ThemePalette = 'primary';

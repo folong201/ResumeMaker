@@ -11,19 +11,19 @@ import { Resume } from './resume';
 
 export class AddSkill {
   static readonly type = '[Resume] AddSkill'
-  constructor(public skill:string){}
+  constructor(public skill:any){}
 }
 export class removeSkill{
   static readonly type = '[Resume] RemoveSkill'
-  constructor(public skill:string){}
+  constructor(public skill:any,public index:any){}
 }
-export class addHobby{
-  static readonly type = '[Resume] AddHobby'
-  constructor (public hobie:any){}
-}
-export class removeHobby {
-  static readonly type = '[Resume] RemoveHobby'
-}
+// export class addHobby{
+//   static readonly type = '[Resume] AddHobby'
+//   constructor (public hobie:any){}
+// }
+// export class removeHobby {
+//   static readonly type = '[Resume] RemoveHobby'
+// }
 export class setName
 {
   static readonly type = '[Resume] SetName'
@@ -36,11 +36,67 @@ export class setEmail {
 
 export class UpdateSkill{
   static readonly type = '[Resume] update Skill '
-  constructor(public skills:any){}
+  constructor(public skill:any,public index:any){}
 }
 
 export class SetPersonnalDetails{
   static readonly type = '[Resume] setdetails'
   constructor(public personnalInfo:any){}
 }
-// props<{ game: Game }>()
+// FONCTIONS SUR L'EDUCATION
+export class CreateEducation{
+  static readonly type = '[Resume] Create Education'
+  constructor(public education:any){}
+}
+export class UpdateEducation {
+  static readonly type = '[Resume] Update Education'
+  constructor(public education: any,public index:any) { }
+}
+export class DeleteEducation {
+  static readonly type = '[Resume] Delete Education'
+  constructor(public education: any,public index:any) { }
+}
+
+
+// Classe pour l'experience
+export class CreateExperience {
+  static readonly type = '[Resume] Create Experience'
+  constructor(public experience: any) { }
+}
+export class UpdateExperience {
+  static readonly type = '[Resume] Update Experience'
+  constructor(public experience: any, public index: any) { }
+}
+export class DeleteExperience {
+  static readonly type = '[Resume] Delete Experience'
+  constructor(public experience: any, public index: any) { }
+}
+
+//action pour la langue
+
+export class CreateLanguage {
+  static readonly type = '[Resume] Create Language'
+  constructor(public language: any) { }
+}
+export class UpdateLanguage {
+  static readonly type = '[Resume] Update Language'
+  constructor(public language: any, public index: any) { }
+}
+export class DeleteLanguage {
+  static readonly type = '[Resume] Delete Language'
+  constructor(public language: any, public index: any) { }
+}
+
+//classes pour les hobies
+export class CreateHobbie {
+  static readonly type = '[Resume] Create Hobbie'
+  constructor(public hobbie: any) { }
+}
+export class UpdateHobbie {
+  static readonly type = '[Resume] Update Hobbie'
+  constructor(public hobbie: any, public index: any) { }
+}
+export class DeleteHobbie {
+  static readonly type = '[Resume] Delete Hobbie'
+  constructor(public hobbie: any, public index: any) { }
+}

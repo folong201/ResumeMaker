@@ -1,8 +1,4 @@
-*{
-  color: red;
-  font-size: 75px;
-}
-
+/*
 .mat-mdc-form-field+.mat-mdc-form-field {
   margin-left: 8px;
 }
@@ -11,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   height: 90%;
-
 }
 
 .spacer {
@@ -29,4 +24,4 @@
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */

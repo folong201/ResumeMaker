@@ -10,9 +10,9 @@ import { SetPersonnalDetails } from 'src/app/resume.actions';
   templateUrl: './personal-details.component.html',
   styleUrls: ['./personal-details.component.css']
 })
-export class PersonalDetailsComponent implements OnInit{
-  constructor(private store:Store){
-    this.formController.valueChanges.subscribe(()=>{
+export class PersonalDetailsComponent implements OnInit {
+  constructor(private store: Store) {
+    this.formController.valueChanges.subscribe(() => {
       this.store.dispatch(new SetPersonnalDetails(this.formController.value))
     })
   }
@@ -22,18 +22,19 @@ export class PersonalDetailsComponent implements OnInit{
   imagePreview!: string;
   @ViewChild('fileInput') fileInput: any;
   @Input() panelOpenState: any
+  
   formController = new FormGroup(
-{
-name : new FormControl(''),
-familyName : new FormControl(''),
-phone : new FormControl(''),
-email : new FormControl(''),
-post : new FormControl(''),
-adresse : new FormControl(''),
-codepostal : new FormControl(''),
-photo : new FormControl(''),
-ville : new FormControl('')
-}
+    {
+      name: new FormControl(''),
+      familyName: new FormControl(''),
+      phone: new FormControl(''),
+      email: new FormControl(''),
+      post: new FormControl(''),
+      adresse: new FormControl(''),
+      codepostal: new FormControl(''),
+      photo: new FormControl(''),
+      ville: new FormControl('')
+    }
   )
 
 

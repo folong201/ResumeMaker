@@ -44,6 +44,10 @@ import { TechniquesComponent } from './components/editor/techniques/techniques.c
 import { NgxsModule } from '@ngxs/store';
 import { ResumeState } from './Resume.state';
 import { PreviewComponent } from './components/preview/preview.component';
+import { EducationItemComponent } from './components/education-item/education-item.component';
+import { ExperienceItemComponent } from './components/editor/experience-item/experience-item.component';
+import { SkillItemComponent } from './components/editor/skill-item/skill-item.component';
+import { LanguageItemComponent } from './components/editor/language-item/language-item.component';
 // import {  resumeReducer } from './counter.reducer';
 
 
@@ -66,7 +70,11 @@ import { PreviewComponent } from './components/preview/preview.component';
     LanguagesComponent,
     HobiesComponent,
     TechniquesComponent,
-    PreviewComponent
+    PreviewComponent,
+    EducationItemComponent,
+    ExperienceItemComponent,
+    SkillItemComponent,
+    LanguageItemComponent
   ],
   imports: [
     BrowserModule,

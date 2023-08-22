@@ -12,19 +12,37 @@ import { AddSkill, removeSkill } from 'src/app/resume.actions';
 export class DefaultComponent implements OnInit {
   constructor(private store:Store){}
   @Input()
-  name!:Observable<string>
+  name!: Observable<string>
+  @Input()
+  familyName!: Observable<string>
+  @Input()
+  post!: Observable<string>
+  @Input()
+  phone!: Observable<string>
+  @Input()
+  town!: Observable<string>
+  @Input()
+  email!: Observable<string>
+  @Input()
+  personal!:any
+  @Input()
+  adresse!: any
+  @Input()
+  educations!:Observable<any>
+  @Input()
+  experiences!: Observable<any>
+  @Input()
+  skills!: Observable<any>
+  @Input()
+  languages!: Observable<any>
+  @Input()
+  hobbies!: Observable<any>
 
-  @Select(ResumeState.getSkills)
-  skills!: Observable<[]>
+  // @Select(ResumeState.getSkills)
+  // skills!: Observable<[]>
+  // @Select(ResumeState.getPost)
+  // post!:Observable<string>
     ngOnInit(): void {
-  }
-
-  addskill(){
-    this.store.dispatch(new AddSkill("skills x"))
-  }
-  removeSkill(skill:string){
-
-    this.store.dispatch(new removeSkill(skill))
   }
 
 }

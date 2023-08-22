@@ -15,76 +15,11 @@
   </p>
   <!-- <mat-icon icon="trash">delete</mat-icon> -->
 
-  <mat-expansion-panel hideToggle class="width-100" *ngFor="let item   of list; let i=index">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Education {{ i }}
-      </mat-panel-title>
-      <mat-panel-description>
-        <span class="mg-5">This is education name</span>
-        <button mat-raised-button color="warn" (click)="delete(i)">
-          <mat-icon>delete</mat-icon>
-          Delete
-        </button>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="row">
-      <div class="col col-12">
-        <div class="ligne2">
-          <div class="mg-5">
-            <div class="col col-12 "> Email Adress </div>
-            <input class="col-12 last longinput">
-          </div>
-        </div>
-      </div>
-      <div class="flexer">
-
-        <div class="col col-6">
-          <div class="ligne2">
-            <div class="mg-5">
-              <div class="col col-12 "> Email Adress </div>
-              <input class="col-12 last shotinput">
-            </div>
-          </div>
-        </div>
-        <div class="col col-6">
-          <div class="ligne2">
-            <div class="mg-5">
-              <div class="col col-12 "> Email Adress </div>
-              <input class="col-12 last shotinput">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flexer">
-
-        <div class="col col-6">
-          <div class="ligne2">
-            <div class="mg-5">
-              <div class="col col-12 "> Email Adress </div>
-              <input class="col-12 last shotinput">
-            </div>
-          </div>
-        </div>
-        <div class="col col-6">
-          <div class="ligne2">
-            <div class="mg-5">
-              <div class="col col-12 "> Email Adress </div>
-              <input class="col-12 last shotinput">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col col-12">
-        <div class="ligne2">
-          <div class="mg-5">
-            <div class="col col-12 "> Description</div>
-            <textarea name="" id="" cols="30" rows="10" class="col-12 last longinput description"></textarea>
-            <!-- <input type="" > -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </mat-expansion-panel>
+  <!-- <div class="boite" *ngFor="let item   of (list|async); let i=index">
+    <app-education-item [index]=i></app-education-item>
+  </div> -->
+  <div class="boite" *ngFor="let item of (list | async); let i = index; trackBy: trackByFn">
+    <app-education-item [index]=i></app-education-item>
+  </div>
 
 </mat-expansion-panel>

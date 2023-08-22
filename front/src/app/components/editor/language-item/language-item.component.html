@@ -1,0 +1,36 @@
+<mat-expansion-panel hideToggle class="width-100">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Lang {{ index }}
+    </mat-panel-title>
+    <mat-panel-description>
+      This is a summary of the content
+      <button mat-raised-button color="warn" (click)="delete()">
+        <mat-icon>delete</mat-icon>
+        Delete
+      </button>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <form [formGroup]="formcontroller">
+  <div class="row">
+    <div class="col col-12">
+      <div class="ligne2">
+        <div class="mg-5">
+          <div class="col col-12 "> Language name </div>
+          <input class="col-12 last longinput" formControlName="name">
+        </div>
+      </div>
+    </div>
+    <div class="flexer">
+      <div class="container">
+        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+          <label class="example-margin">Progress:</label>
+        </section>
+        <mat-slider class="example-margin" style="width: 100%;">
+          <input type="range" formControlName="level" matSliderThumb>
+        </mat-slider>
+      </div>
+    </div>
+  </div>
+</form>
+</mat-expansion-panel>
